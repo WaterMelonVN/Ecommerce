@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.active hr {
+    display: block;
+}
+
+* {
+    font-family: Outfit;
+}
+
+.prata-regular {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* In your CSS file */
+.container {
+    max-width: 1200px; /* Adjust this value to fit your layout */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Optional: add some padding */
+}
+
+.hero {
+    padding-top: 80px; /* For larger screens */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 60px; /* For smaller screens */
+    }
+}
+
+@media (max-width: 640px) {
+    a.active {
+        background-color: black;
+        color: white;
+    }
+}
