@@ -99,7 +99,12 @@ const PlaceOrder = () => {
                 toast.error(response.data?.message || "Failed to place order.");
             }
         } catch (error) {
-            toast.error(error.message);
+            // Log the error message and provide user-friendly feedback
+            console.error("Order placement error: ", error);
+            toast.error(
+                error.response?.data?.message ||
+                    "An error occurred while placing the order."
+            );
         } finally {
             setLoading(false);
         }
@@ -195,24 +200,11 @@ const PlaceOrder = () => {
                             ></p>
                             <img
                                 className="h-5"
-                                src={assets.paypal} // Make sure to add PayPal logo to your assets
+                                src={assets.paypal} // Ensure you have the PayPal logo in your assets
                                 alt="PayPal"
                             />
                             <p className="text-gray-500 text-sm font-medium">
                                 PayPal
-                            </p>
-                        </div>
-                        <div
-                            onClick={() => setMethod("bank")}
-                            className="flex items-center gap-3 border p-2 px-3 cursor-pointer"
-                        >
-                            <p
-                                className={`min-w-3.5 h-3.5 border rounded-full ${
-                                    method === "bank" ? "bg-green-400" : ""
-                                }`}
-                            ></p>
-                            <p className="text-gray-500 text-sm font-medium mx-4">
-                                BANK TRANSFER
                             </p>
                         </div>
                         <div

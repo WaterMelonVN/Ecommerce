@@ -15,11 +15,12 @@ const port = process.env.PORT || 4000;
 connectDB();
 connectCloundinary();
 
-// middleware
+// Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Add this line to handle URL-encoded data
 app.use(cors());
 
-// api endpoints
+// API Endpoints
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 app.use("/api/cart", cartRouter);

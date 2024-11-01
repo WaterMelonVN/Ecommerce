@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import UpdateProduct from "./pages/UpdateProduct"; // Import the UpdateProduct component
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Statistical from "./pages/Statistical";
+import Users from "./pages/User";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 export const currency = "$";
@@ -35,6 +37,7 @@ const App = () => {
                         <Sidebar />
                         <div className="w-[70%] mx-auto ml-[max(5vw,25px)] my-8 text-gray-600 text-base">
                             <Routes>
+                                <Route path="/" element={<Statistical />} />
                                 <Route
                                     path="/add"
                                     element={<Add token={token} />}
@@ -51,6 +54,15 @@ const App = () => {
                                     path="/update-product/:id"
                                     element={<UpdateProduct token={token} />}
                                 />
+                                <Route
+                                    path="/statistical"
+                                    element={<Statistical token={token} />}
+                                />
+                                <Route
+                                    path="/users"
+                                    element={<Users token={token} />}
+                                />{" "}
+                                {/* New route */}
                             </Routes>
                         </div>
                     </div>

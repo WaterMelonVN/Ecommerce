@@ -11,10 +11,10 @@ import Orders from "./pages/Orders";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
-import MyProfile from "./pages/MyProfile";
 import SearchBar from "./components/SearchBar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MyProfile from "./pages/MyProfile";
 
 const App = () => {
     return (
